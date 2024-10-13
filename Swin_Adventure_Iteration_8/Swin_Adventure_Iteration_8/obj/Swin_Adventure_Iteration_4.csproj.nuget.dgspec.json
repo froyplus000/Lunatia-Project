@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Task Solution/7.1P/Swin_Adventure_Iteration_5/Swin_Adventure_Iteration_5/Swin_Adventure_Iteration_5.csproj": {}
+  },
+  "projects": {
+    "/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Task Solution/7.1P/Swin_Adventure_Iteration_5/Swin_Adventure_Iteration_5/Swin_Adventure_Iteration_5.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Task Solution/7.1P/Swin_Adventure_Iteration_5/Swin_Adventure_Iteration_5/Swin_Adventure_Iteration_5.csproj",
+        "projectName": "Swin_Adventure_Iteration_5",
+        "projectPath": "/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Task Solution/7.1P/Swin_Adventure_Iteration_5/Swin_Adventure_Iteration_5/Swin_Adventure_Iteration_5.csproj",
+        "packagesPath": "/Users/saruchi/.nuget/packages/",
+        "outputPath": "/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Task Solution/7.1P/Swin_Adventure_Iteration_5/Swin_Adventure_Iteration_5/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/saruchi/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.314/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

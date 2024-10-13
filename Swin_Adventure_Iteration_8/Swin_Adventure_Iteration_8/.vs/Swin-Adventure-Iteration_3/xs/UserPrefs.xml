@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{5019284F-F5FA-489C-B8F1-6AAE72C46453}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Swin__Adventure__Iteration__3 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../TestIdentifiableObject/Iteration_2_Test.cs">
+    <Files>
+      <File FileName="../TestIdentifiableObject/Iteration_2_Test.cs" Line="6" Column="2" />
+      <File FileName="../TestIdentifiableObject/Iteration_1_Test.cs" Line="1" Column="1" />
+      <File FileName="Item.cs" />
+      <File FileName="GameObject.cs" Line="2" Column="37" />
+      <File FileName="IdentifiableObject.cs" />
+      <File FileName="Bag.cs" Line="2" Column="37" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Swin-Adventure-Iteration_3" expanded="True">
+            <Node name="Swin_Adventure_Iteration_3" expanded="True" />
+            <Node name="TestIdentifiableObject" expanded="True" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Task Solution/5.2P/Swin-Adventure-Iteration_3/Swin-Adventure-Iteration_3/Program.cs" relfile="Program.cs" line="13" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>

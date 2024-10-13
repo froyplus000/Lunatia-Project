@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{5019284F-F5FA-489C-B8F1-6AAE72C46453}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../TestIdentifiableObject/Iteration_2_Test.cs">
+    <Files>
+      <File FileName="Program.cs" />
+      <File FileName="Item.cs" />
+      <File FileName="Inventory.cs" />
+      <File FileName="GameObject.cs" />
+      <File FileName="../TestIdentifiableObject/Iteration_2_Test.cs" Line="13" Column="24" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Swin-Adventure-Iteration_2" expanded="True">
+            <Node name="Swin-Adventure-Iteration_2" expanded="True" />
+            <Node name="TestIdentifiableObject" expanded="True">
+              <Node name="Iteration_2_Test.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Swin-Adventure-Iteration__2 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>
