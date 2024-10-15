@@ -2,6 +2,9 @@
 using LunatiaProject.ItemAndInventory;
 using LunatiaProject.LivingObject;
 using LunatiaProject.Map;
+using LunatiaProject.Factory;
+using LunatiaProject.Core;
+
 
 namespace LunatiaProject;
 
@@ -39,6 +42,14 @@ class Program
         kitchen.Inventory.Put(salt);
 
         Item airpod = new Item(new string[] { "airpod" }, "Airpod Pro", "2nd Generation AirPod Pro");
+
+        // Test Gatherable Factory
+        GatherableObjectFactory gatherableObjectFactory = new GatherableObjectFactory();
+        List<GatherableObject> gatherableObjects = gatherableObjectFactory.CreateGatherableObject("Tree", 3);
+        foreach (GatherableObject gatherable in gatherableObjects)
+        {
+            Console.WriteLine($"{gatherable.Name}, {gatherable.FullDescription}, gives {gatherable.ResourceAmount} woods");
+        }
 
         // Create Paths
         Map.Path myroom2livingroom = new Map.Path(new string[] { "north" }, "Living room", "Walking path to living room in North direction", myroom, livingroom);
