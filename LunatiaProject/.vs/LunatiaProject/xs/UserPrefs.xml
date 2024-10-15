@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{F9B41ED1-C134-43FF-BE66-C3EF3EF2D0BD}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.LunatiaProject PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.LunatiaProjectTest FirstBuild="True" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="LunatiaProject" expanded="True">
+            <Node name="LunatiaProject">
+              <Node name="Command" expanded="True" />
+              <Node name="Core" expanded="True" />
+              <Node name="Interfaces" expanded="True" />
+              <Node name="ItemAndInventory" expanded="True" />
+              <Node name="LivingObject" expanded="True" />
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

@@ -1,0 +1,15 @@
+/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProject/obj/Debug/net7.0/LunatiaProject.csproj.AssemblyReference.cache
+/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProject/obj/Debug/net7.0/LunatiaProject.GeneratedMSBuildEditorConfig.editorconfig
+/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProject/obj/Debug/net7.0/LunatiaProject.AssemblyInfoInputs.cache
+/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProject/obj/Debug/net7.0/LunatiaProject.AssemblyInfo.cs
+/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProject/obj/Debug/net7.0/LunatiaProject.csproj.CoreCompileInputs.cache
+/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProject/bin/Debug/net7.0/LunatiaProject
+/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProject/bin/Debug/net7.0/LunatiaProject.deps.json
+/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProject/bin/Debug/net7.0/LunatiaProject.runtimeconfig.json
+/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProject/bin/Debug/net7.0/LunatiaProject.dll
+/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProject/bin/Debug/net7.0/LunatiaProject.pdb
+/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProject/obj/Debug/net7.0/LunatiaProject.dll
+/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProject/obj/Debug/net7.0/refint/LunatiaProject.dll
+/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProject/obj/Debug/net7.0/LunatiaProject.pdb
+/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProject/obj/Debug/net7.0/LunatiaProject.genruntimeconfig.cache
+/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProject/obj/Debug/net7.0/ref/LunatiaProject.dll
