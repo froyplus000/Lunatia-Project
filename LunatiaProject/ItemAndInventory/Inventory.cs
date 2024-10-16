@@ -14,7 +14,6 @@ namespace LunatiaProject.ItemAndInventory
                 string itemList = "";
                 foreach (Item item in _items)
                 {
-                    // Updated : using \t instead of 4 spaces
                     itemList += string.Format("\t{0}\n", item.ShortDescription);
                 }
                 return itemList;

@@ -50,7 +50,7 @@ class Program
         gatherableObjects.AddRange(gatherableObjectFactory.CreateGatherableObject("GraSS", 3));
         foreach (GatherableObject gatherable in gatherableObjects)
         {
-            livingroom.AddGatherable(gatherable);
+            myroom.AddGatherable(gatherable);
         }
 
         // Create Paths
