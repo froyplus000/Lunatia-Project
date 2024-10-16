@@ -83,6 +83,7 @@ namespace LunatiaProject.Map
 
         // Methods
 
+        // Add
         public void AddPath(Path path)
         {
             _paths.Add(path);
@@ -93,6 +94,13 @@ namespace LunatiaProject.Map
             _gatherables.Add(gatherable);
         }
 
+        // Remove
+        public void RemoveGatherable(GatherableObject gatherable)
+        {
+            _gatherables.Remove(gatherable);
+        }
+
+        // Locate
         public GameObject Locate(string id)
         {
             return Inventory.Fetch(id);
@@ -105,6 +113,18 @@ namespace LunatiaProject.Map
                 if (path.AreYou(id))
                 {
                     return path;
+                }
+            }
+            return null;
+        }
+
+        public GatherableObject LocateGatherable(string id)
+        {
+            foreach (GatherableObject gatherable in _gatherables)
+            {
+                if (gatherable.AreYou(id))
+                {
+                    return gatherable;
                 }
             }
             return null;

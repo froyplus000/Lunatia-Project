@@ -46,8 +46,8 @@ class Program
         // Test Gatherable Factory
         GatherableObjectFactory gatherableObjectFactory = new GatherableObjectFactory();
         List<GatherableObject> gatherableObjects = gatherableObjectFactory.CreateGatherableObject("Tree", 3);
-        gatherableObjects.AddRange(gatherableObjectFactory.CreateGatherableObject("ROCK", 5)); // AddRange to add multiple object to this list
-        gatherableObjects.AddRange(gatherableObjectFactory.CreateGatherableObject("GraSS", 7));
+        gatherableObjects.AddRange(gatherableObjectFactory.CreateGatherableObject("ROCK", 3)); // AddRange to add multiple object to this list
+        gatherableObjects.AddRange(gatherableObjectFactory.CreateGatherableObject("GraSS", 3));
         foreach (GatherableObject gatherable in gatherableObjects)
         {
             livingroom.AddGatherable(gatherable);

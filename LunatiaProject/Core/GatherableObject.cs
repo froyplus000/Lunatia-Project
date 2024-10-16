@@ -1,6 +1,7 @@
 ﻿using System;
 using LunatiaProject.Interfaces;
 using LunatiaProject.Enum;
+using LunatiaProject.ItemAndInventory;
 using System.Security.AccessControl;
 
 namespace LunatiaProject.Core
@@ -30,9 +31,25 @@ namespace LunatiaProject.Core
         }
 
         // Method
-        public bool IsDepleted()
+
+        public Item CreateItem()
         {
-            return _resourceAmount <= 0; // Check if the object has any resources left
+            // Convert ResourceType to string to use as an ID
+            string resourceId = ResourceType.ToString();
+
+            // Determine the item based on the ResourceType
+            switch (this.FirstId)
+            {
+                case "tree":
+                    return new Item(new string[] { resourceId }, "Wood", "A piece of wood.");
+                case "rock":
+                    return new Item(new string[] { resourceId }, "Stone", "A piece of stone.");
+                case "grass":
+                    return new Item(new string[] { resourceId }, "Fiber", "A piece of stone.");
+                default:
+                    throw new ArgumentException("Unknown resource type.");
+            }
         }
+
     }
 }

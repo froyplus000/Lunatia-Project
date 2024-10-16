@@ -61,7 +61,7 @@ namespace LunatiaProject.Command
 
         public string MovePlayer(Player p, Map.Path path)
         {
-            p.Move((Map.Path)path);
+            p.Move(path);
             return string.Format("You have moved to : {0}", p.Location.Name);
         }
    

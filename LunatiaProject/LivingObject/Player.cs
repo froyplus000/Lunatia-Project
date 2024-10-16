@@ -69,6 +69,17 @@ namespace LunatiaProject.LivingObject
                 Location = path.Destination;
             }
         }
+
+		public void Gather(GatherableObject gatherableObject)
+		{
+			// Add item based multiple time based on resource amount
+            for (int i = 0; i < gatherableObject.ResourceAmount; i++)
+			{
+				// Create Item and add to player inventory
+				Inventory.Put(gatherableObject.CreateItem());
+			}
+        }
+
     }
 }
 
