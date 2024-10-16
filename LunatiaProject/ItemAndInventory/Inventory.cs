@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 namespace LunatiaProject.ItemAndInventory
 {
 	public class Inventory
@@ -11,11 +12,24 @@ namespace LunatiaProject.ItemAndInventory
         {
             get
             {
+                // Group items from List of items
+                var groupedItems = _items 
+                    .GroupBy(item => item.ShortDescription) // Group by item that have same short description
+                    // This will create anonymous object for each group
+                    .Select(group => new
+                    {
+                        // Each group have ShortDescription as a Key
+                        ShortDescription = group.Key,
+                        Count = group.Count() // Count number of items in the group
+                    });
+
+                // Build the formatted string for the inventory
                 string itemList = "";
-                foreach (Item item in _items)
+                foreach (var group in groupedItems)
                 {
-                    itemList += string.Format("\t{0}\n", item.ShortDescription);
+                    itemList += string.Format("\t{0} x {1}\n", group.Count, group.ShortDescription);
                 }
+
                 return itemList;
             }
         }
@@ -29,6 +43,7 @@ namespace LunatiaProject.ItemAndInventory
         // Methods
         public bool HasItem(string id)
         {
+
             foreach (Item item in _items)
             {
                 if (item.AreYou(id))
