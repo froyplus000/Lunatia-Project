@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq; 
 using LunatiaProject.Core;
 using LunatiaProject.Interfaces;
 using LunatiaProject.ItemAndInventory;
@@ -44,18 +45,30 @@ namespace LunatiaProject.Map
         {
             get
             {
-                
-                string gatherableList = string.Empty;
+                // Group gatherables by their Name
+                var groupedGatherables = _gatherables
+                    .GroupBy(gatherable => gatherable.Name)
+                    .Select(gatherableGroup => new
+                    {
+                        Name = gatherableGroup.Key, // The Name of the gatherable object
+                        Count = gatherableGroup.Count(), // The count of gatherables with this Name
+                        // also getting their FullDescription and FirstId
+                        gatherableGroup.First().FullDescription,
+                        gatherableGroup.First().FirstId
+                    });
 
+                // Build the formatted string for the gatherable list
+                string gatherableList = "";
 
-                for (int i = 0; i < _gatherables.Count; i++)
+                foreach (var gatherableGroup in groupedGatherables)
                 {
-                    gatherableList += string.Format("\t{0}. {1}, {2} ({3})\n", i + 1, _gatherables[i].Name, _gatherables[i].FullDescription, _gatherables[i].FirstId);
+                    gatherableList += string.Format("\t{0} x {1}, {2}. ({3})\n", gatherableGroup.Count, gatherableGroup.Name, gatherableGroup.FullDescription, gatherableGroup.FirstId);
                 }
+
                 return gatherableList;
             }
         }
-        
+
 
         public override string FullDescription
         {
