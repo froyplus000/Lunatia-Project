@@ -1,11 +1,11 @@
 ﻿using System;
 namespace LunatiaProject.Enum
 {
-	public class ResourceType
+	public enum ResourceType
 	{
-		public ResourceType()
-		{
-		}
+		Wood,
+		Stone,
+		Fiber
 	}
 }
 

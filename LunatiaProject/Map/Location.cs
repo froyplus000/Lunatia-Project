@@ -11,6 +11,8 @@ namespace LunatiaProject.Map
         // Fields
         private Inventory _inventory;
         private List<Path> _paths;
+        private List<GatherableObject> _gatherables;
+        
 
         // Properties
         public Inventory Inventory
@@ -27,7 +29,7 @@ namespace LunatiaProject.Map
                 switch (_paths.Count)
                 {
                     case 1:
-                        return string.Format("\tThe only path is {0} in {1} direction", _paths[0].Name, _paths[0].FirstId);
+                        return string.Format("\tThe only path is {0} in {1} direction\n", _paths[0].Name, _paths[0].FirstId);
                     default:
                         for (int i = 0; i < _paths.Count; i++)
                         {
@@ -37,6 +39,23 @@ namespace LunatiaProject.Map
                 }
             }
         }
+
+        public string GatherableList
+        {
+            get
+            {
+                
+                string gatherableList = string.Empty;
+
+
+                for (int i = 0; i < _gatherables.Count; i++)
+                {
+                    gatherableList += string.Format("\t{0}. {1}, {2} ({3})\n", i + 1, _gatherables[i].Name, _gatherables[i].FullDescription, _gatherables[i].FirstId);
+                }
+                return gatherableList;
+            }
+        }
+        
 
         public override string FullDescription
         {
@@ -48,6 +67,8 @@ namespace LunatiaProject.Map
                 locationDescription += Inventory.ItemList;
                 locationDescription += "Exist Paths:\n";
                 locationDescription += PathList;
+                locationDescription += "List of Gatherables:\n";
+                locationDescription += GatherableList;
                 return locationDescription;
 
             }
@@ -57,6 +78,7 @@ namespace LunatiaProject.Map
         {
             _inventory = new Inventory();
             _paths = new List<Path>();
+            _gatherables = new List<GatherableObject>();
         }
 
         // Methods
@@ -64,6 +86,11 @@ namespace LunatiaProject.Map
         public void AddPath(Path path)
         {
             _paths.Add(path);
+        }
+
+        public void AddGatherable(GatherableObject gatherable)
+        {
+            _gatherables.Add(gatherable);
         }
 
         public GameObject Locate(string id)

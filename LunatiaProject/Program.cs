@@ -46,9 +46,11 @@ class Program
         // Test Gatherable Factory
         GatherableObjectFactory gatherableObjectFactory = new GatherableObjectFactory();
         List<GatherableObject> gatherableObjects = gatherableObjectFactory.CreateGatherableObject("Tree", 3);
+        gatherableObjects.AddRange(gatherableObjectFactory.CreateGatherableObject("ROCK", 5)); // AddRange to add multiple object to this list
+        gatherableObjects.AddRange(gatherableObjectFactory.CreateGatherableObject("GraSS", 7));
         foreach (GatherableObject gatherable in gatherableObjects)
         {
-            Console.WriteLine($"{gatherable.Name}, {gatherable.FullDescription}, gives {gatherable.ResourceAmount} woods");
+            livingroom.AddGatherable(gatherable);
         }
 
         // Create Paths

@@ -1,43 +1,20 @@
 ﻿using System;
 using LunatiaProject.Interfaces;
 using LunatiaProject.Core;
+using LunatiaProject.Enum;
 
 namespace LunatiaProject.Factory
 {
 	public class GatherableObjectFactory : IGatherableObjectFactory
 	{
         // Fields
-        //private int _resourceAmount;
         private Random _random;
-
-        // Properties
-        //public int ResourceAmount
-        //{
-        //    get { return _resourceAmount; }
-        //    set { value = _resourceAmount; }
-        //}
 
         // Constrcutor
         public GatherableObjectFactory()
 		{
-            //Random rnd = new Random();
-            //int randomNumberInRange = rnd.Next(2, 6);
-            //ResourceAmount = randomNumberInRange;
-
             _random = new Random();
         }
-
-        // Method
-        //public void CreateGatherableObject(string type, int amount)
-        //{
-        //    switch (type.ToLower())
-        //    {
-        //        case "tree":
-        //            new GatherableObject(new string[] {"tree"}, "Tree", "A normal tree thats give you woods", _resourceAmount);
-        //            break;
-
-        //    }  
-        //}
 
         public List<GatherableObject> CreateGatherableObject(string type, int amount)
         {
@@ -51,7 +28,17 @@ namespace LunatiaProject.Factory
                 {
                     case "tree":
                         gatherableObjects.Add(
-                            new GatherableObject(new string[] { "tree" }, "Tree", "A normal tree that gives you wood", randomResourceAmount)
+                            new GatherableObject(new string[] { "tree" }, "Tree", "A normal tree that gives you wood", randomResourceAmount, ResourceType.Wood)
+                        );
+                        break;
+                    case "rock":
+                        gatherableObjects.Add(
+                            new GatherableObject(new string[] { "rock" }, "Rock", "A normal rock that gives you stone", randomResourceAmount, ResourceType.Stone)
+                        );
+                        break;
+                    case "grass":
+                        gatherableObjects.Add(
+                            new GatherableObject(new string[] { "grass" }, "Grass", "A normal grass that gives you fiber", randomResourceAmount, ResourceType.Fiber)
                         );
                         break;
 
