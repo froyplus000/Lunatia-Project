@@ -107,6 +107,14 @@ namespace LunatiaProject.Map
             _gatherables.Add(gatherable);
         }
 
+        public void AddAllGatherable(List<GatherableObject> gatherableObjects)
+        {
+            foreach (GatherableObject gatherable in gatherableObjects)
+            {
+                this.AddGatherable(gatherable);
+            }
+        }
+
         // Remove
         public void RemoveGatherable(GatherableObject gatherable)
         {

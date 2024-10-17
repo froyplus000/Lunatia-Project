@@ -48,10 +48,7 @@ class Program
         List<GatherableObject> gatherableObjects = gatherableObjectFactory.CreateGatherableObject("Tree", 3);
         gatherableObjects.AddRange(gatherableObjectFactory.CreateGatherableObject("ROCK", 3)); // AddRange to add multiple object to this list
         gatherableObjects.AddRange(gatherableObjectFactory.CreateGatherableObject("GraSS", 3));
-        foreach (GatherableObject gatherable in gatherableObjects)
-        {
-            myroom.AddGatherable(gatherable);
-        }
+        myroom.AddAllGatherable(gatherableObjects);
 
         // Create Paths
         Map.Path myroom2livingroom = new Map.Path(new string[] { "north" }, "Living room", "Walking path to living room in North direction", myroom, livingroom);
