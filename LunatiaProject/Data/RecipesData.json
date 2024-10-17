@@ -1,0 +1,32 @@
+﻿[
+  {
+    "Id": ["woodenswordrecipe"],
+    "Name": "Wooden Sword Recipe",
+    "Desc": "a recipe for crafting a wooden sword",
+    "ItemName": "Wooden Sword",
+    "Ingredients": {
+      "wood": 2,
+      "fiber": 1
+    }
+  },
+  {
+    "Id": ["woodenshieldrecipe"],
+    "Name": "Wooden Shield Recipe",
+    "Desc": "a recipe for crafting a wooden shield",
+    "ItemName": "Wooden Shield",
+    "Ingredients": {
+      "wood": 3,
+      "stone": 1,
+      "fiber": 1
+    }
+  },
+  {
+    "Id": ["ropeRecipe"],
+    "Name": "Rope Recipe",
+    "Desc": "a recipe for crafting a rope",
+    "ItemName": "Rope",
+    "Ingredients": {
+      "fiber": 2
+    }
+  }
+]

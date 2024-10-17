@@ -41,17 +41,18 @@ namespace LunatiaProject.ItemAndInventory
         }
 
         // Methods
-        public bool HasItem(string id)
+       
+        public bool HasItem(string id) // Refactored using Linq
         {
+            // Return True, if any item in the collection satisfies AreYou condition
+            // Means return true if Item exist in the Collection
+            return _items.Any(item => item.AreYou(id)); // Linq, Any()
+        }
 
-            foreach (Item item in _items)
-            {
-                if (item.AreYou(id))
-                {
-                    return true;
-                }
-            }
-            return false;
+        // Counts how many item in the collection satisfies AreYou condition.
+        public int GetItemCount(string id)
+        {
+            return _items.Count(item => item.AreYou(id)); // Linq, Count()
         }
 
         public void Put(Item itm)
