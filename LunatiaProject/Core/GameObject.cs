@@ -14,7 +14,7 @@ namespace LunatiaProject.Core
 		}
 		public string ShortDescription
 		{
-            get { return string.Format("a {0} ({1})", _name, FirstId); }
+            get { return string.Format("{0} ({1})", _name, FirstId); }
         }
 		public virtual string FullDescription
 		{

@@ -14,6 +14,7 @@ namespace LunatiaProject.Command
             _commands = new List<Command>();
             _commands.Add(new LookCommand());
             _commands.Add(new MoveCommand());
+            _commands.Add(new GatherCommand());
         }
 
         // Method

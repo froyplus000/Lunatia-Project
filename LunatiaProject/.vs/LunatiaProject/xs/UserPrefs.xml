@@ -1,21 +1,25 @@
 ﻿<Properties StartupConfiguration="{F9B41ED1-C134-43FF-BE66-C3EF3EF2D0BD}|Default">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.LunatiaProject PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.LunatiaProjectTest FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.LunatiaProject PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
+    <Files>
+      <File FileName="Program.cs" Line="51" Column="46" />
+      <File FileName="ItemAndInventory/Inventory.cs" />
+      <File FileName="Core/GameObject.cs" Line="8" Column="24" />
+      <File FileName="Core/GatherableObject.cs" Line="28" Column="80" />
+      <File FileName="Interfaces/IHaveInventory.cs" Line="1" Column="1" />
+      <File FileName="Factory/GatherableObjectFactory.cs" Line="47" Column="45" />
+      <File FileName="Enum/ResourceType.cs" Line="8" Column="8" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="LunatiaProject" expanded="True">
+          <Node name="LunatiaProject">
             <Node name="LunatiaProject">
-              <Node name="Command" expanded="True" />
-              <Node name="Core" expanded="True" />
               <Node name="Interfaces" expanded="True" />
               <Node name="ItemAndInventory" expanded="True" />
-              <Node name="LivingObject" expanded="True" />
               <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
@@ -23,4 +27,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
