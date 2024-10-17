@@ -30,7 +30,7 @@ public class Iteration_2_Test
     [Test]
     public void TestShortDescription()
     {
-        Assert.That(sword.ShortDescription, Is.EqualTo("a Sword (sword)"));
+        Assert.That(sword.ShortDescription, Is.EqualTo("Sword (sword)"));
     }
     [Test]
     public void TestFullDescription()
@@ -87,7 +87,7 @@ public class Iteration_2_Test
         pi.Put(sword);
         pi.Put(shield);
         string itemList = pi.ItemList;
-        string expectedItemList = "\ta Sword (sword)\n\ta Shield (shield)\n";
+        string expectedItemList = "\t1 x Sword (sword)\n\t1 x Shield (shield)\n";
         Assert.That(itemList, Is.EqualTo(expectedItemList));
     }
 
@@ -128,7 +128,7 @@ public class Iteration_2_Test
         pi.Put(sword);
         pi.Put(shield);
         string fullDescription = p.FullDescription;
-        string expectedDescription = "You are Fred Rank A Adventurer\nYou are carrying\n\ta Sword (sword)\n\ta Shield (shield)\n";
+        string expectedDescription = "You are Fred Rank A Adventurer\nYou are carrying\n\t1 x Sword (sword)\n\t1 x Shield (shield)\n";
         Assert.That(fullDescription, Is.EqualTo(expectedDescription));
     }
 }

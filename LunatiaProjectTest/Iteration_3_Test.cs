@@ -46,7 +46,7 @@ public class Iteration_3_Test
     {
         bag.Inventory.Put(potion);
         bag.Inventory.Put(key);
-        string expectedDescription = string.Format("In the {0} you can see:\n\t{1}\n\t{2}\n", bag.Name, potion.ShortDescription, key.ShortDescription);
+        string expectedDescription = string.Format("In the {0} you can see:\n\t1 x {1}\n\t1 x {2}\n", bag.Name, potion.ShortDescription, key.ShortDescription);
         Assert.That(bag.FullDescription, Is.EqualTo(expectedDescription));
     }
     [Test]
