@@ -102,3 +102,6 @@
 /Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProjectTest/obj/Debug/net7.0/LunatiaProjectTest.pdb
 /Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProjectTest/obj/Debug/net7.0/LunatiaProjectTest.genruntimeconfig.cache
 /Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProjectTest/obj/Debug/net7.0/ref/LunatiaProjectTest.dll
+/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProjectTest/bin/Debug/net7.0/System.Text.Encodings.Web.dll
+/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProjectTest/bin/Debug/net7.0/System.Text.Json.dll
+/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProjectTest/bin/Debug/net7.0/runtimes/browser/lib/net7.0/System.Text.Encodings.Web.dll

@@ -1,9 +1,10 @@
 ﻿using System;
 using LunatiaProject.Core;
+using LunatiaProject.Interfaces;
 
 namespace LunatiaProject.ItemAndInventory
 {
-	public class RecipeBook : Item
+	public class RecipeBook : Item, IHaveRecipe
 	{
         // Fields
         private static RecipeBook _instance; // Singleton instance
@@ -19,7 +20,7 @@ namespace LunatiaProject.ItemAndInventory
                 int index = 1;
                 foreach (var recipe in _recipes)
                 {
-                    recipeList += string.Format("\t{0}. {1}, {2}\n", index, recipe.Name, recipe.FullDescription);
+                    recipeList += string.Format("\t{0}. {1}, {2} ({3})\n", index, recipe.Name, recipe.FullDescription, recipe.FirstId);
                     index++;
                 }
 
@@ -73,6 +74,18 @@ namespace LunatiaProject.ItemAndInventory
             }
 
             return string.Format("No recipe found for {0}\nTry enter either name of item you want to craft or recipe name itself\n", name);
+        }
+
+        public Recipe Locate(string id)
+        {
+            foreach (Recipe recipe in _recipes)
+            {
+                if (recipe.AreYou(id))
+                {
+                    return recipe;
+                }
+            }
+            return null;
         }
     }
 }
