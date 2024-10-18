@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "veTn3kIoXMgI7IbR3PeJ2mgJ67o+es6tCT1kfAZubiKFkQoYO/jcg2sY+dv60s53tbjSurobI6QBxhL8juY3+A==",
+  "dgSpecHash": "n7FRil2LuHz0XHKY11IkBhVb/YagRuCr1cQQIwWScyIlOspSpt2zFQfSOo1fbRjgT0ED2rTnfPwN6BIgAKegxg==",
   "success": true,
   "projectFilePath": "/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProjectTest/LunatiaProjectTest.csproj",
   "expectedPackageFiles": [
@@ -16,7 +16,9 @@
     "/Users/saruchi/.nuget/packages/nunit/3.13.3/nunit.3.13.3.nupkg.sha512",
     "/Users/saruchi/.nuget/packages/nunit.analyzers/3.6.1/nunit.analyzers.3.6.1.nupkg.sha512",
     "/Users/saruchi/.nuget/packages/nunit3testadapter/4.4.2/nunit3testadapter.4.4.2.nupkg.sha512",
-    "/Users/saruchi/.nuget/packages/system.reflection.metadata/1.6.0/system.reflection.metadata.1.6.0.nupkg.sha512"
+    "/Users/saruchi/.nuget/packages/system.reflection.metadata/1.6.0/system.reflection.metadata.1.6.0.nupkg.sha512",
+    "/Users/saruchi/.nuget/packages/system.text.encodings.web/8.0.0/system.text.encodings.web.8.0.0.nupkg.sha512",
+    "/Users/saruchi/.nuget/packages/system.text.json/8.0.5/system.text.json.8.0.5.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "wJfcK9JUhgRRGcZHp8PV51LWTMNk8rdQM7Vk0jdp4hWMbeI9kfOKPBQJABqxloxfFgvbC3oDw6ZIn6qUX8AEDw==",
+  "dgSpecHash": "6NE2Qs3PqjscmSKe3u/IGdLH2fohXLcJzl7jSYIvvC9vV8HVvyJuMge7zr6lKgM4OZ6WUChrsdxPzLu1jSnpJg==",
   "success": true,
   "projectFilePath": "/Users/saruchi/Documents/Bachelor in ComSci - Software Develoment/T3 - 2024 SM2/Object Oriented Programming (Retake)/Custom Program/Lunatia-Project/LunatiaProject/LunatiaProject.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/saruchi/.nuget/packages/system.text.encodings.web/8.0.0/system.text.encodings.web.8.0.0.nupkg.sha512",
+    "/Users/saruchi/.nuget/packages/system.text.json/8.0.5/system.text.json.8.0.5.nupkg.sha512"
+  ],
   "logs": []
 }

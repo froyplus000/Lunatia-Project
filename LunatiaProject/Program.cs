@@ -5,6 +5,7 @@ using LunatiaProject.Map;
 using LunatiaProject.Factory;
 using LunatiaProject.Core;
 
+using System.Text.Json; // Need for working with JSON file
 
 namespace LunatiaProject;
 
@@ -49,6 +50,24 @@ class Program
         gatherableObjects.AddRange(gatherableObjectFactory.CreateGatherableObject("ROCK", 3)); // AddRange to add multiple object to this list
         gatherableObjects.AddRange(gatherableObjectFactory.CreateGatherableObject("GraSS", 3));
         myroom.AddAllGatherable(gatherableObjects);
+
+
+        // Test Recipe
+
+        RecipeBook recipeBook = RecipeBook.Instance;
+
+        // Need to go back 3 time to root directory, then can access Data Folder
+        string recipeFilePath = "../../../Data/RecipesData.json";
+        RecipeFactory factory = new RecipeFactory(recipeFilePath);
+        List<Recipe> allRecipes = factory.CreateRecipe();
+        recipeBook.AddAllRecipe(allRecipes);
+
+        //Console.WriteLine(recipeBook.RecipesList);
+        //// Get recipe by recipe name
+        //string recipeDetails1 = recipeBook.GetRecipeByName("Wooden Sword Recipe");
+        //Console.WriteLine(recipeDetails1);
+        player.Inventory.Put(recipeBook);
+
 
         // Create Paths
         Map.Path myroom2livingroom = new Map.Path(new string[] { "north" }, "Living room", "Walking path to living room in North direction", myroom, livingroom);

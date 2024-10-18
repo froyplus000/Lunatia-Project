@@ -1,5 +1,6 @@
 ﻿using System;
 using LunatiaProject.LivingObject;
+using LunatiaProject.ItemAndInventory;
 using LunatiaProject.Interfaces;
 using LunatiaProject.Core;
 
@@ -22,11 +23,18 @@ namespace LunatiaProject.Command
             }
             IHaveInventory container; // variable to store a container
 
-
 			// Default - If input lenght isn't 3 or 5, return error massage
 			switch (textLength)
 			{
-				case (3):
+                case (2):
+                    // If 3rd word is here, return full description of player's current location
+                    if (text[1] == "here" && text[0] == "look")
+                    {
+                        return p.Location.FullDescription;
+                    }
+                    return "I don't know how to look like that";
+
+                case (3):
 					// 1st word must be "look"
                     if (text[0] != "look")
                     {
@@ -40,7 +48,7 @@ namespace LunatiaProject.Command
                     }
 
                     // If 3rd word is here, return full description of player's current location
-                    if (text[2] == "here")
+                    if (text[2] == "here" )
                     {
                         return p.Location.FullDescription;
                     }
@@ -71,6 +79,8 @@ namespace LunatiaProject.Command
                     {
                         return string.Format("I can't find the {0}", text[4]);
                     }
+
+
                     return LookAtIn(text[2], container);
 
 				default: // Default code for assigning error message and Break
@@ -104,13 +114,40 @@ namespace LunatiaProject.Command
         }
 
         private string LookAtIn(string itemId, IHaveInventory container)
-		{
+        {
+            // First, check if the item exists in the container (e.g., player inventory)
             GameObject item = container.Locate(itemId);
-            if (item == null)
+
+            // If the item is a RecipeBook, return the recipe list
+            if (item is RecipeBook recipebook)
             {
-                return string.Format("I can't find the {0}", itemId);
+                return recipebook.RecipesList;
             }
-            return item.FullDescription;
+
+            if (item != null)
+            {
+                return item.FullDescription;
+            }
+
+            // If not found, check if the container is the player and they have a recipebook
+            if (container is Player player)
+            {
+                // Assuming player has a method to get their RecipeBook from the inventory
+                RecipeBook recipeBook = player.Inventory.Fetch("recipebook") as RecipeBook;
+
+                if (recipeBook != null)
+                {
+                    // Try to find the recipe in the recipebook
+                    Recipe recipe = recipeBook.Locate(itemId);
+
+                    if (recipe != null)
+                    {
+                        return recipe.GetRecipe();
+                    }
+                }
+            }
+
+            return string.Format("I can't find the {0}", itemId);
         }
     }
 }
