@@ -1,6 +1,6 @@
 ﻿[
   {
-    "Id": ["woodenswordrecipe"],
+    "Id": ["woodensword-r"],
     "Name": "Wooden Sword Recipe",
     "Desc": "a recipe for crafting a wooden sword",
     "ItemName": "Wooden Sword",
@@ -10,7 +10,7 @@
     }
   },
   {
-    "Id": ["woodenshieldrecipe"],
+    "Id": ["woodenshield-r"],
     "Name": "Wooden Shield Recipe",
     "Desc": "a recipe for crafting a wooden shield",
     "ItemName": "Wooden Shield",
@@ -21,7 +21,7 @@
     }
   },
   {
-    "Id": ["ropeRecipe"],
+    "Id": ["rope-r"],
     "Name": "Rope Recipe",
     "Desc": "a recipe for crafting a rope",
     "ItemName": "Rope",

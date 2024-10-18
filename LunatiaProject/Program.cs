@@ -62,10 +62,10 @@ class Program
         List<Recipe> allRecipes = factory.CreateRecipe();
         recipeBook.AddAllRecipe(allRecipes);
 
-        Console.WriteLine(recipeBook.RecipesList);
-        // Get recipe by recipe name
-        string recipeDetails1 = recipeBook.GetRecipeByName("Wooden Sword Recipe");
-        Console.WriteLine(recipeDetails1);
+        //Console.WriteLine(recipeBook.RecipesList);
+        //// Get recipe by recipe name
+        //string recipeDetails1 = recipeBook.GetRecipeByName("Wooden Sword Recipe");
+        //Console.WriteLine(recipeDetails1);
         player.Inventory.Put(recipeBook);
 
 

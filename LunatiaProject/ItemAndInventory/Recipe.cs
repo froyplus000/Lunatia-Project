@@ -35,11 +35,12 @@ namespace LunatiaProject.ItemAndInventory
         public string GetRecipe()
         {
 
-            string recipeInfo = string.Format("{0} requires:\n", Name);
+            string recipeInfo = string.Format("Requires:\n");
             foreach (var ingredient in Ingredients)
             {
                 recipeInfo += string.Format("\t{0} x {1}\n", ingredient.Value, ingredient.Key);
             }
+            recipeInfo += string.Format("To Craft : {0}\n", ItemName);
             return recipeInfo;
         }
 
@@ -53,14 +54,14 @@ namespace LunatiaProject.ItemAndInventory
                 if (itemCount < ingredient.Value)
                 {
                     // If player inventory doesn't have enough amount of that item
-                    NotEnoughIngredientsAlert(ingredient, itemCount); // Alert them
+                    IngredientsAlert(ingredient, itemCount); // Alert them
                     return false; // Return that Player can't craft
                 }
             }
             return true; // Return that Player can craft
         }
 
-        private void NotEnoughIngredientsAlert(KeyValuePair<string, int> ingredient, int itemCount)
+        private void IngredientsAlert(KeyValuePair<string, int> ingredient, int itemCount)
         {
             Console.WriteLine(string.Format("You need {0} more of {1}(s) to crafe {2}", ingredient.Value - itemCount, ingredient.Key, Name));
         }
