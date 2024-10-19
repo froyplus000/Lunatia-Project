@@ -80,6 +80,37 @@ namespace LunatiaProject.LivingObject
 			}
         }
 
-    }
+		public void Craft(Recipe recipe)
+		{
+			// if player can craft the item or not
+			if (recipe.CanCraft(this))
+			{
+				ItemCraftable item = new ItemCraftable(new string[] { recipe.ItemId }, recipe.ItemName, recipe.ItemDescription, recipe);
+				//ItemCraftable item = new ItemCraftable(string.Format("", recipe.ItemId, recipe.ItemName, recipe.ItemDescription));
+				Inventory.Put(item);
+
+                foreach (var ingredient in recipe.Ingredients)
+                {
+                    string ingredientId = ingredient.Key; // Ingredient item ID (or name)
+                    int requiredAmount = ingredient.Value; // Required amount to craft
+
+                    // Fetch the ingredient item from the player's inventory
+                    Item ingredientItem = Inventory.Fetch(ingredientId);
+
+                    if (ingredientItem != null)
+                    {
+                        // Assuming your inventory has a method to reduce item quantity
+                        for (int i = 0; i < requiredAmount; i++)
+                        {
+                            // Remove the required quantity from inventory one by one
+                            Inventory.Take(ingredientId);
+                        }
+                    }
+                }
+                Console.WriteLine("Successfully crafted " + recipe.ItemName);
+            }
+		}
+
+	}
 }
 

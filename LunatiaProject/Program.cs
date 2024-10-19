@@ -67,7 +67,15 @@ class Program
         //string recipeDetails1 = recipeBook.GetRecipeByName("Wooden Sword Recipe");
         //Console.WriteLine(recipeDetails1);
         player.Inventory.Put(recipeBook);
-
+        //Recipe recipe = recipeBook.Locate("rope");
+        //player.Inventory.Put(new Item(new string[] { "fiber" }, "Fiber", "A piece of stone."));
+        //player.Inventory.Put(new Item(new string[] { "fiber" }, "Fiber", "A piece of stone."));
+        ItemFactory itemFactory = new ItemFactory();
+        List<Item> items = itemFactory.CreateItems("fiber", "Fiber", "A piece of stone.", 4);
+        player.Inventory.PutMultipleItems(items);
+        player.Craft(recipeBook.Locate("rope-r"));
+        player.Craft(recipeBook.Locate("rope-r"));
+        //player.Craft(recipeBook.Locate("woodensword-r"));
 
         // Create Paths
         Map.Path myroom2livingroom = new Map.Path(new string[] { "north" }, "Living room", "Walking path to living room in North direction", myroom, livingroom);
@@ -80,10 +88,10 @@ class Program
         myroom.AddPath(myroom2kitchen);
         livingroom.AddPath(livingroom2myroom);
         kitchen.AddPath(kitchen2myroom);
-
         player.Location = myroom;
         player.Inventory.Put(airpod);
         player.Inventory.Put(key);
+       
 
         Command.Command commandProcessor = new CommandProcessor();
 

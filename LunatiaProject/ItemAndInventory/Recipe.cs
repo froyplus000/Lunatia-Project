@@ -9,11 +9,21 @@ namespace LunatiaProject.ItemAndInventory
 	{
 
         // Fields
+        private string _itemId; // Name of an item this recipe crafts
         private string _itemName; // Name of an item this recipe crafts
+        private string _itemDesciption; // Name of an item this recipe crafts
         private Dictionary<string, int> _ingredients;
 
         // Property
+        public string ItemId
+        {
+            get { return _itemName; }
+        }
         public string ItemName
+        {
+            get { return _itemName; }
+        }
+        public string ItemDescription
         {
             get { return _itemName; }
         }
@@ -24,10 +34,12 @@ namespace LunatiaProject.ItemAndInventory
         
 
         // Constructor
-        public Recipe(string[] id, string name, string desc, string itemName, Dictionary<string, int> ingredients) : base(id, name, desc)
+        public Recipe(string[] id, string name, string desc, Dictionary<string, int> ingredients, string itemId, string itemName, string itemDesc) : base(id, name, desc)
 		{
-            _itemName = itemName;
             _ingredients = ingredients;
+            _itemId = itemId;
+            _itemName = itemName;
+            _itemDesciption = itemDesc;
 		}
 
         // Methods

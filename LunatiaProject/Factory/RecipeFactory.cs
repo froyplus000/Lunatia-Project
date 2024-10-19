@@ -43,8 +43,10 @@ namespace LunatiaProject.Factory
                         recipeJson.Id,
                         recipeJson.Name,
                         recipeJson.Desc,
+                        recipeJson.Ingredients,
+                        recipeJson.ItemId,
                         recipeJson.ItemName,
-                        recipeJson.Ingredients
+                        recipeJson.ItemDescription
                     );
                     recipes.Add(recipe);
                 }
@@ -62,8 +64,10 @@ namespace LunatiaProject.Factory
             public string[] Id { get; set; }  // Matches the "id" in JSON (array of strings)
             public string Name { get; set; }   // Matches the "name" in JSON
             public string Desc { get; set; }   // Matches the "desc" in JSON
-            public string ItemName { get; set; }  // Matches "itemName" in JSON
             public Dictionary<string, int> Ingredients { get; set; }  // Matches "ingredients" in JSON (key-value pairs)
+            public string ItemId { get; set; }  // Matches "itemId" in JSON
+            public string ItemName { get; set; }  // Matches "itemName" in JSON
+            public string ItemDescription { get; set; }  // Matches "itemDescription" in JSON
         }
     }
 }

@@ -60,6 +60,14 @@ namespace LunatiaProject.ItemAndInventory
             _items.Add(itm);
         }
 
+        public void PutMultipleItems(List<Item> items)
+        {
+            foreach (Item item in items)
+            {
+                _items.Add(item);
+            }
+        }
+
         public Item Take(string id)
         {
             foreach (Item item in _items)
