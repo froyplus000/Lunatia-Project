@@ -12,6 +12,12 @@ namespace LunatiaProject.ItemAndInventory
         {
             get
             {
+                // Check if there are no items in the inventory
+                if (_items == null || !_items.Any())
+                {
+                    return "\tNo Item\n";  // Return "No Item" if the list is empty
+                }
+
                 // Group items from List of items
                 var groupedItems = _items 
                     .GroupBy(item => item.ShortDescription) // Group by item that have same short description
@@ -29,7 +35,7 @@ namespace LunatiaProject.ItemAndInventory
                 {
                     itemList += string.Format("\t{0} x {1}\n", group.Count, group.ShortDescription);
                 }
-
+               
                 return itemList;
             }
         }
@@ -58,6 +64,14 @@ namespace LunatiaProject.ItemAndInventory
         public void Put(Item itm)
         {
             _items.Add(itm);
+        }
+
+        public void PutMultipleItems(List<Item> items)
+        {
+            foreach (Item item in items)
+            {
+                _items.Add(item);
+            }
         }
 
         public Item Take(string id)

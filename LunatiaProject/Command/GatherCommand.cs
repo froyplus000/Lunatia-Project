@@ -1,7 +1,6 @@
 ﻿using System;
 using LunatiaProject.Core;
 using LunatiaProject.Map;
-
 using LunatiaProject.LivingObject;
 using LunatiaProject.ItemAndInventory;
 using static System.Net.Mime.MediaTypeNames;

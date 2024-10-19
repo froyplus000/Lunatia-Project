@@ -87,6 +87,31 @@ namespace LunatiaProject.ItemAndInventory
             }
             return null;
         }
+
+        // Methods for CraftCommand
+        public Recipe LocateByName(string itemName)
+        {
+            foreach (Recipe recipe in _recipes)
+            {
+                if (recipe.ItemId == itemName)
+                {
+                    return recipe;
+                }
+            }
+            return null;
+        }
+
+        public Recipe LocateById(string itemId)
+        {
+            foreach (Recipe recipe in _recipes)
+            {
+                if (recipe.AreYou(itemId))
+                {
+                    return recipe;
+                }
+            }
+            return null;
+        }
     }
 }
 
