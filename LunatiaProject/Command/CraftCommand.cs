@@ -1,6 +1,7 @@
 ﻿using System;
 using LunatiaProject.ItemAndInventory;
 using LunatiaProject.LivingObject;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace LunatiaProject.Command
 {
@@ -17,14 +18,31 @@ namespace LunatiaProject.Command
                 text[i] = text[i].ToLower();
             }
             RecipeBook? recipeBook = p.Inventory.Fetch("recipebook") as RecipeBook;
-            Recipe? recipe;
+
 
             // Default Error message
             string errormsg = string.Format("What do you want to {0}?", text[0]);
 
+            switch (textLength)
+            {
+                case (1):
+                    return errormsg;
+                case (2):
+                    if (text.Last() == "a" | text.Last() == "an" | text.Last() == "the" | text.Last() == "that")
+                    {
+                        return errormsg;
+                    }
+                    return CraftProcess(recipeBook, text, p, errormsg);
+                default:
+
+                    return CraftProcess(recipeBook, text, p, errormsg);
+            }
+        }
+        private string CraftProcess(RecipeBook recipeBook, string[] text, Player p, string errormsg)
+        {
             string joinedWord = string.Join("", text.Skip(1));
             // 1. Find recipe from Item Name
-            recipe = recipeBook.LocateByName(joinedWord);
+            Recipe recipe = recipeBook.LocateByName(joinedWord);
 
             // 2. Find recipe from Item Id
             if (recipe == null)
@@ -37,6 +55,11 @@ namespace LunatiaProject.Command
                 // Assumed that player may input a recipe id which must be a second word
                 recipe = recipeBook.Locate(joinedWord);
             }
+            string checkIngredient = recipe.CheckIngredient(p);
+            if (checkIngredient != null)
+            {
+                return checkIngredient;
+            }
 
             if (recipe != null)
             {
@@ -44,8 +67,8 @@ namespace LunatiaProject.Command
                 return string.Format("{0} is crafted and added to your inventory", recipe.ItemName);
             }
             return errormsg;
-
         }
+
     }
 }
 

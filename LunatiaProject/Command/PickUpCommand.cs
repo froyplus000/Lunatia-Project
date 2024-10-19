@@ -8,7 +8,7 @@ namespace LunatiaProject.Command
 	public class PickUpCommand : Command
 	{
 		// Construtor
-		public PickUpCommand() : base(new string[] { "pick","pickup", "collect", "put"}) { }
+		public PickUpCommand() : base(new string[] { "pick", "pickup", "collect", "put"}) { }
 
         public override string Execute(Player p, string[] text)
 		{

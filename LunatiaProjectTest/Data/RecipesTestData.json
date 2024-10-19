@@ -1,0 +1,37 @@
+﻿[
+  {
+    "Id": ["woodensword-r"],
+    "Name": "Wooden Sword Recipe",
+    "Desc": "a recipe for crafting a wooden sword",
+    "Ingredients": {
+      "wood": 2,
+      "fiber": 1
+    },
+    "ItemId": "woodensword",
+    "ItemName": "Wooden Sword",
+    "ItemDescription": "a Wooden Sword for newbie adventure"
+  },
+  {
+    "Id": ["woodenshield-r"],
+    "Name": "Wooden Shield Recipe",
+    "Desc": "a recipe for crafting a wooden shield",
+    "Ingredients": {
+      "wood": 2,
+      "fiber": 1
+    },
+    "ItemId": "woodenshield",
+    "ItemName": "Wooden Shield",
+    "ItemDescription": "a Wooden Shield for newbie adventure"
+  },
+  {
+    "Id": ["rope-r"],
+    "Name": "Rope Recipe",
+    "Desc": "a recipe for crafting a rope",
+    "Ingredients": {
+      "fiber": 2
+    },
+    "ItemId": "rope",
+    "ItemName": "Rope",
+    "ItemDescription": "a Rope used for crafting other thing"
+  }
+]

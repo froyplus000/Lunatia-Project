@@ -107,7 +107,6 @@ namespace LunatiaProject.LivingObject
                         }
                     }
                 }
-                //Console.WriteLine("Successfully crafted " + recipe.ItemName);
             }
 		}
 

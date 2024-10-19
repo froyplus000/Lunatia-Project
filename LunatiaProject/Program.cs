@@ -62,14 +62,8 @@ class Program
         List<Recipe> allRecipes = factory.CreateRecipe();
         recipeBook.AddAllRecipe(allRecipes);
 
-        //Console.WriteLine(recipeBook.RecipesList);
-        //// Get recipe by recipe name
-        //string recipeDetails1 = recipeBook.GetRecipeByName("Wooden Sword Recipe");
-        //Console.WriteLine(recipeDetails1);
         player.Inventory.Put(recipeBook);
-        //Recipe recipe = recipeBook.Locate("rope");
-        //player.Inventory.Put(new Item(new string[] { "fiber" }, "Fiber", "A piece of stone."));
-        //player.Inventory.Put(new Item(new string[] { "fiber" }, "Fiber", "A piece of stone."));
+
         ItemFactory itemFactory = new ItemFactory();
         List<Item> items = itemFactory.CreateItems("fiber", "Fiber", "A piece of stone.", 4);
         player.Inventory.PutMultipleItems(items);
