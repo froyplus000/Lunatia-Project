@@ -15,6 +15,10 @@ namespace LunatiaProject.Command
             _commands.Add(new LookCommand());
             _commands.Add(new MoveCommand());
             _commands.Add(new GatherCommand());
+            _commands.Add(new PickUpCommand());
+            _commands.Add(new DropCommand());
+            _commands.Add(new CraftCommand());
+
         }
 
         // Method

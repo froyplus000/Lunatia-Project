@@ -17,7 +17,7 @@ namespace LunatiaProject.ItemAndInventory
         // Property
         public string ItemId
         {
-            get { return _itemName; }
+            get { return _itemId; }
         }
         public string ItemName
         {
@@ -25,7 +25,7 @@ namespace LunatiaProject.ItemAndInventory
         }
         public string ItemDescription
         {
-            get { return _itemName; }
+            get { return _itemDesciption; }
         }
         public Dictionary<string, int> Ingredients
         {
