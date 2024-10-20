@@ -1,0 +1,12 @@
+[
+  {
+    "Id": ["clover"],
+    "Name": "4 Leaf Clover",
+    "Desc": "A rare 4 Leaf Clover can be found only in this forest"
+  },
+  {
+    "Id": ["lavender"],
+    "Name": "Laveder flower",
+    "Desc": "A Lavender flower. Could it be use for potion crafting?"
+  }
+]
