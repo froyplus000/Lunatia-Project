@@ -34,7 +34,7 @@ namespace LunatiaProject.Map
                     default:
                         for (int i = 0; i < _paths.Count; i++)
                         {
-                            list += string.Format("\t{0}. {1} in <{2}>\n", i + 1, _paths[i].Name, _paths[i].FirstId);
+                            list += string.Format("\t{0}. {1} in ({2})\n", i + 1, _paths[i].Name, _paths[i].FirstId);
                         }
                         return list;
                 }
@@ -62,7 +62,14 @@ namespace LunatiaProject.Map
 
                 foreach (var gatherableGroup in groupedGatherables)
                 {
-                    gatherableList += string.Format("\t{0} x {1}, {2}. ({3})\n", gatherableGroup.Count, gatherableGroup.Name, gatherableGroup.FullDescription, gatherableGroup.FirstId);
+                    if (gatherableGroup.Count >= 10)
+                    {
+                        gatherableList += string.Format("\tPlenty of {1}, {2}. ({3})\n", gatherableGroup.Count, gatherableGroup.Name, gatherableGroup.FullDescription, gatherableGroup.FirstId);
+                    }
+                    else
+                    {
+                        gatherableList += string.Format("\t{0} x {1}, {2}. ({3})\n", gatherableGroup.Count, gatherableGroup.Name, gatherableGroup.FullDescription, gatherableGroup.FirstId);
+                    }
                 }
 
                 return gatherableList;
@@ -74,7 +81,7 @@ namespace LunatiaProject.Map
         {
             get
             {
-                string locationDescription = string.Format("{0} {1}\n", Name, base.FullDescription);
+                string locationDescription = string.Format("{0}, {1}. ({2})\n", Name, base.FullDescription, FirstId);
 
                 locationDescription += "Location contains:\n";
                 locationDescription += Inventory.ItemList;
@@ -100,6 +107,13 @@ namespace LunatiaProject.Map
         public void AddPath(Path path)
         {
             _paths.Add(path);
+        }
+        public void AddAllPath(List<Map.Path> paths)
+        {
+            foreach (Path path in paths)
+            {
+                this.AddPath(path);
+            }
         }
 
         public void AddGatherable(GatherableObject gatherable)

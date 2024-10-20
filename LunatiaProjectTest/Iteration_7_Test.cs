@@ -94,7 +94,7 @@ public class Iteration_7_Test
     public void TestPathIsLocked() // No Key in Player's Inventory, so can't move
     {
         string result = moveCommand.Execute(player, new string[] { "move", "west" });
-        string expected = "The path is locked, need key to unlock the door";
+        string expected = "You can't travel through this path yet. What item could help you get through this path?";
         Assert.That(expected, Is.EqualTo(result));
     }
 

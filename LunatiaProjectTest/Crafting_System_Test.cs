@@ -43,7 +43,7 @@ public class Crafting_System_Test
 
         // Location and Items
 
-        itemFactory = new ItemFactory();
+        itemFactory = new ItemFactory("../../../Data/ItemsData.json");
         items = itemFactory.CreateItems("wood", "Wood", "A piece of wood.", 2);
         //items.AddRange(itemFactory.CreateItems("fiber", "Fiber", "A piece of stone.", 4));
         items.AddRange(itemFactory.CreateItems("fiber", "Fiber", "A piece of fiber.", 1));

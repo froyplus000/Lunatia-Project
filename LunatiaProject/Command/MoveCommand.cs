@@ -52,7 +52,7 @@ namespace LunatiaProject.Command
                     {
                         return MovePlayer(p, _path);
                     }
-                    return "The path is locked, need key to unlock the door";
+                    return "You can't travel through this path yet. What item could help you get through this path?";
                 }
                 return MovePlayer(p, _path);
             }

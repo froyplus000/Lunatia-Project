@@ -1,0 +1,22 @@
+[
+  {
+    "Id": ["northPath"],
+    "Name": "North Passage",
+    "Desc": "A narrow passage leading north.",
+    "From": "forest",
+    "Destination": "mountains",
+    "Key": null
+  },
+  {
+    "Id": ["eastPath"],
+    "Name": "East Road",
+    "Desc": "A well-trodden road leading east.",
+    "From": "forest",
+    "Destination": "village",
+    "Key": {
+      "Id": ["villageKey"],
+      "Name": "Village Key",
+      "Desc": "A rusty key to unlock the village gate."
+    }
+  }
+]

@@ -41,11 +41,11 @@ namespace LunatiaProject.Core
             switch (this.FirstId)
             {
                 case "tree":
-                    return new Item(new string[] { resourceId }, "Wood", "A piece of wood.");
+                    return new Item(new string[] { resourceId }, "Wood", "A piece of wood, used for crafting.");
                 case "rock":
-                    return new Item(new string[] { resourceId }, "Stone", "A piece of stone.");
+                    return new Item(new string[] { resourceId }, "Stone", "A piece of stone, used for crafting.");
                 case "grass":
-                    return new Item(new string[] { resourceId }, "Fiber", "A piece of stone.");
+                    return new Item(new string[] { resourceId }, "Fiber", "A piece of fiber, used for crafting.");
                 default:
                     throw new ArgumentException("Unknown resource type.");
             }
