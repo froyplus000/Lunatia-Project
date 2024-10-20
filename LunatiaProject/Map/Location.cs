@@ -30,11 +30,11 @@ namespace LunatiaProject.Map
                 switch (_paths.Count)
                 {
                     case 1:
-                        return string.Format("\tThe only path is {0} in {1} direction\n", _paths[0].Name, _paths[0].FirstId);
+                        return string.Format("\tThe only path is {0}, {1} ({2})\n", _paths[0].Name, _paths[0].FullDescription, _paths[0].FirstId);
                     default:
                         for (int i = 0; i < _paths.Count; i++)
                         {
-                            list += string.Format("\t{0}. {1} in ({2})\n", i + 1, _paths[i].Name, _paths[i].FirstId);
+                            list += string.Format("\t{0}. {1}, {2} ({3})\n", i + 1, _paths[i].Name, _paths[i].FullDescription, _paths[i].FirstId);
                         }
                         return list;
                 }

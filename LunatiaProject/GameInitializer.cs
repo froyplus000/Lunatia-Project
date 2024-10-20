@@ -9,8 +9,8 @@ namespace LunatiaProject
 {
 	public class GameInitializer
 	{
-		// Fields
-		private LocationFactory _locationFactory;
+        // Fields
+        private LocationFactory _locationFactory;
 		private PathFactory _pathFactory;
 		private GatherableObjectFactory _gatherableObjectFactory;
 
