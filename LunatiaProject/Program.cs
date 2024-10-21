@@ -13,8 +13,11 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.WriteLine("-------------------------");
+        Console.WriteLine("Welcome to Adventurer!");
+        Console.WriteLine("-------------------------");
         // Get player's name and description from user input
-        Console.WriteLine("Enter player's name:");
+        Console.WriteLine("\nEnter player's name:");
         string playerName = Console.ReadLine();
         Console.WriteLine("Enter player's description:");
         string playerDescription = Console.ReadLine();
@@ -23,8 +26,10 @@ class Program
         Player player = new Player(playerName, playerDescription);
 
         // SETUP
-
-        GameInitializer gameInitializer = new GameInitializer(player);
+        LocationFactory locationFactory = new LocationFactory();
+        StoryManager storyManager = new StoryManager("../../../Data/StoryNew.txt");
+        GameInitializer gameInitializer = new GameInitializer(player, storyManager);
+        Location luminara = locationFactory.CreateLocations("luminara", "Luminara City of Light", "A radiant city hidden from ordinary sight. Only those who follow the ancient rituals may witness its splendor, bathed in eternal light and mystery.");
         gameInitializer.StartGame();
 
         Command.Command commandProcessor = new CommandProcessor();
@@ -32,6 +37,16 @@ class Program
         // Loop reading command, This will continuous asking player for command input
         while (true)
         {
+            // Completed the game check
+            if (player.Location.Name == "Lunatia City Centre" && player.Location.Inventory.HasItem("license") && player.Location.Inventory.HasItem("clearpotion"))
+            {
+                player.Location = luminara;
+                storyManager.CheckStory(player);
+                Console.WriteLine("\nCongratulations, you had completed Lunatia Project Demo. Thank you for playing");
+                Console.ReadKey();
+                return;
+            }
+            storyManager.CheckStory(player);
             Console.WriteLine("\nEnter a command:");
             string input = Console.ReadLine().ToLower();
             // split each word in sentence and add in to list of string

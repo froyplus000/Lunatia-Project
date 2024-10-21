@@ -22,7 +22,7 @@ namespace LunatiaProject.Factory
 
             for (int i = 0; i < amount; i++)
             {
-                int randomResourceAmount = _random.Next(2, 6); // Random amount between 2 and 6
+                int randomResourceAmount = _random.Next(12, 30); // Random amount between 2 and 6
 
                 switch (type.ToLower())
                 {

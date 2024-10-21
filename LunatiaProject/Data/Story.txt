@@ -1,0 +1,36 @@
+[Setup]
+You awaken in the middle of nowhere.
+Before you are trees, rocks, and grass.
+You soon realize you’re in a strange forest.
+What will you do next?
+[Lunatia City Front Gate]
+A towering gate stands before a vast city.
+Yet, no life stirs within its walls.
+[Lunatia City Entrance]
+You’ve reached Lunatia’s grand city.
+But not a single soul is in sight. Why?
+[Lunatia City Centre]
+You’ve arrived at the city’s heart.
+A massive hole yawns in the ground.
+Is there something you’re meant to do here?
+Why is the city so eerily silent?
+< Sign > “Only those who offer their passage at the city’s heart shall see its true form.”
+[Lunatia Forest Upper]
+You climb to the upper levels of Lunatia Forest.
+On the ground lies a mysterious object.
+Should you take a closer look?
+[Lunatia Forest Lower]
+You can see a myterious note on the ground.
+Curious what does it say?
+[Obtained License]
+It’s a Lunatia City Entrance License.
+Could this be your key into the city?
+[Obtained Clear Potion]
+It’s a Lunatia City Entrance License.
+Could this be your key into the city?
+[Luminara City of Light]
+You have reached the true city.
+Welcome to Luminara, a City of Light.
+Congratgulation to your first adventure.
+You can have a rest now, see you later.
+

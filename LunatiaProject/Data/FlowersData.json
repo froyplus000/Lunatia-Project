@@ -1,0 +1,17 @@
+[
+  {
+    "Id": ["lionragweed"],
+    "Name": "Lion Ragweed",
+    "Desc": "A rare 7-leaf clover found deep within Lunatia’s forests. Its presence is believed to break hidden barriers."
+  },
+  {
+    "Id": ["goldenglow"],
+    "Name": "Golden Glow",
+    "Desc": "A glowing flower, said to hold the essence of light. Its properties are often used in revealing potions."
+  },
+  {
+    "Id": ["glons"],
+    "Name": "Glons",
+    "Desc": "A variant of lavender with an unusual shimmer. Known for its use in purifying and clarity brews."
+  }
+]

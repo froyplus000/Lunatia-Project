@@ -21,10 +21,15 @@ namespace LunatiaProject
 
 		private Player _player;
 
-		public GameInitializer(Player player)
+		private StoryManager _storyManager;
+
+
+		// Constructor
+		public GameInitializer(Player player, StoryManager storyManager)
 		{
 			_player = player;
-		}
+			_storyManager = storyManager;
+        }
 
 		// Method
 
@@ -41,38 +46,68 @@ namespace LunatiaProject
             _pathFactory = new PathFactory();
             List<GatherableObject> gatherableObjects = StarterGatherableObjects();
 			List<Item> items = StarterItem();
+
 			// Locations Creation
-			Location city = _locationFactory.CreateLocations("lunatiaCity", "Lunatia City", "a main city of Lunatia region");
+			Location cityGate = _locationFactory.CreateLocations("lunatiaCityGate", "Lunatia City Front Gate", "a Front Gate to enter Lunatia City");
+			Location cityEntrance = _locationFactory.CreateLocations("lunatiaCityEntrance", "Lunatia City Entrance", "an entrance of main city in Lunatia region");
+			Location cityCentre = _locationFactory.CreateLocations("lunatiaCityCentre", "Lunatia City Centre", "a centre of Lunatia City");
             Location forest = _locationFactory.CreateLocations("lunatiaForest", "Lunatia Forest", "a myterious forest located in Lunatia region");
             Location forestUpper = _locationFactory.CreateLocations("lunatiaForestUpper", "Lunatia Forest Upper", "an Upper level of Lunatia Forest. Who knows what's lies ahead...");
+            Location forestLower = _locationFactory.CreateLocations("lunatiaForestLower", "Lunatia Forest Lower", "an Lower level of Lunatia Forest. Who knows what's lies ahead...");
+
+			
 			// Key Item
             Item cityEntranceLicense = _itemFactory.CreateItem("license", "Lunatia City Entrance License", "a license required to enter the City of Lunatia region");
-            Item rope = _itemFactory.CreateItem("rope", "Rope", "a Rope. What can you use this for?");
+            Item ladder = _itemFactory.CreateItem("ladder", "Ladder", "a ladder, can be used to travel up the hill");
+            Item strongrope = _itemFactory.CreateItem("strongrope", "Strong Rope", "a strong rope, can be used to travel down the hill");
 
-			// City
-            Map.Path city2forest = _pathFactory.CreatePath("west", "Lunatia Forest", "a path from Lunatia City to Lunatia Forest", city, forest);
+			// Story Item
+			Item note = _itemFactory.CreateItem("note", "The truth lies beneath.", "To see the city as it truly is, offer the passage and purity it requires. Drop what grants entry and clears the way into the heart of Lunatia.");
+		
 
-			city.AddPath(city2forest);
+			// City Gate
+            Map.Path citygate2forest = _pathFactory.CreatePath("west", "Lunatia Forest", "a path from Lunatia City Front Gate to Lunatia Forest", cityGate, forest);
+            Map.Path citygate2entrance = _pathFactory.CreatePath("east", "Lunatia City Entrance", "a path from Lunatia City to Lunatia Forest", cityGate, cityEntrance, cityEntranceLicense);
+			cityGate.AddPath(citygate2forest);
+			cityGate.AddPath(citygate2entrance);
+
+			// City Entrance
+            Map.Path cityentrance2gate = _pathFactory.CreatePath("west", "Lunatia City Front Gate", "a path from Lunatia City Entrance to Lunatia City Front Gate", cityEntrance, cityGate);
+            Map.Path cityentrance2centre = _pathFactory.CreatePath("east", "Lunatia City Centre", "a path from Lunatia City Entrance to City Centre", cityEntrance, cityCentre);
+
+            cityEntrance.AddPath(cityentrance2gate);
+            cityEntrance.AddPath(cityentrance2centre);
+
+			// City Centre
+            Map.Path citycentre2entrance = _pathFactory.CreatePath("west", "Lunatia City Entrance", "a path from Lunatia City Centre to City Entrance", cityCentre, cityEntrance);
+
+            cityCentre.AddPath(citycentre2entrance);
 
 			// Forest
 
-            Map.Path forest2city = _pathFactory.CreatePath("east", "Lunatia City", "a path from Lunatia Forest to Lunatia City", forest, city, cityEntranceLicense);
-            Map.Path forest2upper = _pathFactory.CreatePath("uphill", "Lunatia Forest Upper", "a path from Lunatia Forest to Lunatia Forest Upper", forest, forestUpper, rope);
+            Map.Path forest2citygate = _pathFactory.CreatePath("east", "Lunatia City Front Gate", "a path from Lunatia Forest to a City Gate", forest, cityGate);
+            Map.Path forest2upper = _pathFactory.CreatePath("uphill", "Lunatia Forest Upper", "a path from Lunatia Forest to Lunatia Forest Upper", forest, forestUpper, ladder);
+            Map.Path forest2lower = _pathFactory.CreatePath("downhill", "Lunatia Forest Lower", "a path from Lunatia Forest to Lunatia Forest Lower", forest, forestLower, strongrope);
 
-			forest.AddPath(forest2city);
+			forest.AddPath(forest2citygate);
 			forest.AddPath(forest2upper);
+			forest.AddPath(forest2lower);
 
 			forest.AddAllGatherable(gatherableObjects);
 
 			// Forest Upper
-            Map.Path upper2forest = _pathFactory.CreatePath("downhill", "Lunatia Forest", "a path from Lunatia Forest Upper to Lunatia Forest", forestUpper, forest, rope);
+            Map.Path upper2forest = _pathFactory.CreatePath("downhill", "Lunatia Forest", "a path from Lunatia Forest Upper to Lunatia Forest", forestUpper, forest, strongrope);
 
 			forestUpper.AddPath(upper2forest);
-			forestUpper.AddAllGatherable(gatherableObjects);
-			forestUpper.Inventory.PutMultipleItems(items);
 
 			forestUpper.Inventory.Put(cityEntranceLicense);
 
+			// Forest Lower
+            Map.Path lower2forest = _pathFactory.CreatePath("uphill", "Lunatia Forest", "a path from Lunatia Forest Lower to Lunatia Forest", forestLower, forest, ladder);
+
+			forestLower.AddPath(lower2forest);
+			forestLower.Inventory.PutMultipleItems(items);
+			forestLower.Inventory.Put(note);
 			// Player Starting location is Forest
 			_player.Location = forest;
         }
@@ -99,25 +134,17 @@ namespace LunatiaProject
 			_player.Inventory.Put(_recipeBook);
 		}
 
-		private List<Item> StarterItem() // For multiple Items creation
+		private List<Item> StarterItem() // Create Ingredient items from file
 		{
-			_itemFactory = new ItemFactory("../../../Data/ItemsData.json");
+			_itemFactory = new ItemFactory("../../../Data/FlowersData.json");
 			List<Item> items = _itemFactory.CreateItemsFromFile();
 			return items;
         }
 
 		private void StarterStory()
 		{
-            Console.WriteLine("\nYou woke up in the middle of no where.\n");
-			Thread.Sleep(1500); // delay 1.5 sec
-            Console.WriteLine("You can see Tree, Rock and Grass.\n");
-            Thread.Sleep(1500);
-            Console.WriteLine("You now realised that you are in the some kind of forest.\n");
-            Thread.Sleep(1500);
-            Console.WriteLine("What can you do now?");
-            Thread.Sleep(1500);
+			_storyManager.CheckStory(_player);
         }
-		
     }
 }
 
