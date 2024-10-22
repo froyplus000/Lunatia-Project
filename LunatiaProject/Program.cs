@@ -47,16 +47,23 @@ class Program
                 return;
             }
             storyManager.CheckStory(player);
-            Console.WriteLine("\nEnter a command:");
-            string input = Console.ReadLine().ToLower();
-            // split each word in sentence and add in to list of string
-            string[] commandParts = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            string input = "";
+            do
+            {
+                Console.WriteLine("\nEnter a command:");
+                input = Console.ReadLine().ToLower();
+                // split each word in sentence and add in to list of string
+
+            } while (input == "");
+             string[] commandParts = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             // DEMO
             if (commandParts[0] == "demo")
             {
                 // List of demo input string
                 string[] demoInputs = new string[] {
+                    "help",
                     "look at me",
                     "look at here",
                     "move uphill",
@@ -70,13 +77,13 @@ class Program
                     //"",
                     //"",
                     //"",
-                    "quit"
+                    "exit"
                 };
                 // Loop for to progress each string in the list
                 for (int i = 0; i < demoInputs.Length; i++)
                 {
                     // If the input is "quit" means the demo had ended.
-                    if (demoInputs[i] == "quit")
+                    if (demoInputs[i] == "exit")
                     {
                         Console.WriteLine("\nDemo Input : " + demoInputs[i]);
                         Console.WriteLine("\nThe Demo has Ended. Press any key to close a program");
