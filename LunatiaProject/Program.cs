@@ -66,34 +66,93 @@ class Program
                     "help",
                     "look at me",
                     "look at here",
-                    "move uphill",
-                    "look at uphill",
-                    "look at east",
-                    "look at downhill",
-                    "go east",
+                    "look at uphill", // See path to upper, ladder required
+                    "move uphill", // can't travel message 
+                    "look at east", // look east to see path that not lock
+                    "move east",
                     "look at here",
+                    "look at east", // can see that entrance requires License
+                    "move west", // Forest again
+                    "look at recipebook", // Recipe book 
+                    "look at ladder-r", // ladder recipe
+                    // gathering command demo
+                    "gather tree",
+                    "gather rock",
+                    "gather grass",
+                    "chop tree",
+                    "mine rock",
+                    "break rock",
+                    "cut grass",
+                    "harvest grass",
+                    "harvest tree",
+                    "chop rock",
+                    "break grass",
+                    // Player inventory
+                    "look at me",
+                    "look at ladder-r",
+                    "craft rope-r",
+                    "craft rope",
+                    "craft Rope",
+                    "craft Ladder",
+                    "go uphill",
+                    "look around",
+                    "look at license in lunatiaForestUpper",
+                    "collect license",
+                    "go downhill",
+                    "look at downhill",
+                    "look at me",
+                    "craft Rope",
+                    "craft Strong Rope",
+                    "go downhill",
+                    "look around",
+                    "look at note in lunatiaForestLower",
+                    "collect note",
+                    "collect lionragweed",
+                    "collect goldenglow",
+                    "collect glons",
+                    "look at lionragweed",
+                    "look at goldenglow",
+                    "look at glons",
+                    "look at clearpotion-r",
+                    "craft Clear Potion",
+                    "go uphill",
                     "go east",
-                    "look at east",
-                    //"",
-                    //"",
-                    //"",
+                    "go east",
+                    "look around",
+                    "go east",
+                    "look around",
+                    "drop license",
+                    "drop clearpotion",
                     "exit"
                 };
                 // Loop for to progress each string in the list
                 for (int i = 0; i < demoInputs.Length; i++)
                 {
+
                     // If the input is "quit" means the demo had ended.
                     if (demoInputs[i] == "exit")
                     {
-                        Console.WriteLine("\nDemo Input : " + demoInputs[i]);
+                        //Console.WriteLine("\nDemo Input : " + demoInputs[i]);
+                        Console.WriteLine(string.Format("\n[ {0} ]\n", demoInputs[i]));
                         Console.WriteLine("\nThe Demo has Ended. Press any key to close a program");
                         Console.ReadKey();
                         return;
                     }
                     // Process the command in the list
                     string[] demoCommardParts = demoInputs[i].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                    Console.WriteLine("\nDemo Input : " + demoInputs[i]);
+                    Console.WriteLine(string.Format("\n[ {0} ]\n", demoInputs[i]));
+                    //Console.WriteLine("\nDemo Input : " + demoInputs[i]);
                     Console.WriteLine(commandProcessor.Execute(player, demoCommardParts));
+                    // Completed the game check
+                    if (player.Location.Name == "Lunatia City Centre" && player.Location.Inventory.HasItem("license") && player.Location.Inventory.HasItem("clearpotion"))
+                    {
+                        player.Location = luminara;
+                        storyManager.CheckStory(player);
+                        Console.WriteLine("\nCongratulations, you had completed Lunatia Project Demo. Thank you for playing");
+                        Console.ReadKey();
+                        return;
+                    }
+                    storyManager.CheckStory(player);
                     Console.ReadKey(); // Press any key to perform next command
                 }
                 

@@ -28,7 +28,7 @@ namespace LunatiaProject.Command
 			{
                 case (2):
                     // If 3rd word is here, return full description of player's current location
-                    if (text[1] == "here" && text[1] == "around" && text[0] == "look")
+                    if (text[1] == "here" && text[0] == "look" || text[1] == "around" && text[0] == "look")
                     {
                         return p.Location.FullDescription;
                     }

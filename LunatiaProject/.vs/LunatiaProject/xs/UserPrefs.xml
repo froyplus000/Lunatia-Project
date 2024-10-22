@@ -1,46 +1,27 @@
 ﻿<Properties StartupConfiguration="{F9B41ED1-C134-43FF-BE66-C3EF3EF2D0BD}|Default">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.LunatiaProject PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="StoryManager.cs">
-    <Files>
-      <File FileName="Map/Location.cs" Line="8" Column="29" />
-      <File FileName="Factory/LocationFactory.cs" Line="10" Column="1" />
-      <File FileName="Factory/ILocationFactory.cs" Line="10" Column="12" />
-      <File FileName="Map/Path.cs" Line="40" Column="1" />
-      <File FileName="Factory/PathFactory.cs" Line="15" Column="1" />
-      <File FileName="Interfaces/IPathFactory.cs" Line="9" Column="9" />
-      <File FileName="GameInitializer.cs" Line="105" Column="19" />
-      <File FileName="StoryManager.cs" Line="40" Column="6" />
-      <File FileName="Program.cs" Line="47" Column="24" />
-      <File FileName="Command/CraftCommand.cs" Line="58" Column="1" />
-      <File FileName="ItemAndInventory/Inventory.cs" Line="56" Column="1" />
-      <File FileName="Core/IdentifiableObject.cs" Line="33" Column="1" />
-      <File FileName="Command/CommandProcessor.cs" Line="12" Column="1" />
-      <File FileName="Command/Command.cs" Line="10" Column="1" />
-      <File FileName="Factory/GatherableObjectFactory.cs" Line="30" Column="47" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="LunatiaProject" expanded="True">
-            <Node name="LunatiaProject" expanded="True" />
-            <Node name="LunatiaProjectTest" expanded="True" />
+          <Node name="LunatiaProject">
+            <Node name="LunatiaProject" expanded="True">
+              <Node name="Command" expanded="True" />
+              <Node name="Factory" expanded="True" />
+              <Node name="ItemAndInventory" expanded="True" />
+              <Node name="Map" expanded="True">
+                <Node name="Location.cs" selected="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="LunatiaProject" selected="True" />
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.LunatiaProject PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>

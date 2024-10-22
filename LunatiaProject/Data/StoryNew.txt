@@ -4,7 +4,7 @@ Around you, trees sway, rocks sit, and grass rustles.
 This forest feels unfamiliar... what will you do now?
 [Lunatia City Front Gate]
 A huge gate looms before a vast city.
-Yet, no signs of life stir behind its walls.
+Yet, no signs of life stir behind walls.
 [Lunatia City Entrance]
 You've entered Lunatia’s grand city.
 But why is there no one here? The silence is unsettling.
@@ -26,6 +26,7 @@ Is this your key to entering the city?
 A Clear Potion now rests in your hands.
 What mysteries does it hold?
 [Luminara City of Light]
+Congrats!!!
 At last, you’ve uncovered the real city.
 Welcome to Luminara, the City of Light.
 Congratulations on completing your first journey.

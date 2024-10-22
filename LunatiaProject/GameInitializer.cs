@@ -108,6 +108,7 @@ namespace LunatiaProject
 			forestLower.AddPath(lower2forest);
 			forestLower.Inventory.PutMultipleItems(items);
 			forestLower.Inventory.Put(note);
+
 			// Player Starting location is Forest
 			_player.Location = forest;
         }
