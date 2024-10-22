@@ -47,10 +47,58 @@ class Program
                 return;
             }
             storyManager.CheckStory(player);
-            Console.WriteLine("\nEnter a command:");
-            string input = Console.ReadLine().ToLower();
-            // split each word in sentence and add in to list of string
-            string[] commandParts = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            string input = "";
+            do
+            {
+                Console.WriteLine("\nEnter a command:");
+                input = Console.ReadLine().ToLower();
+                // split each word in sentence and add in to list of string
+
+            } while (input == "");
+             string[] commandParts = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            // DEMO
+            if (commandParts[0] == "demo")
+            {
+                // List of demo input string
+                string[] demoInputs = new string[] {
+                    "help",
+                    "look at me",
+                    "look at here",
+                    "move uphill",
+                    "look at uphill",
+                    "look at east",
+                    "look at downhill",
+                    "go east",
+                    "look at here",
+                    "go east",
+                    "look at east",
+                    //"",
+                    //"",
+                    //"",
+                    "exit"
+                };
+                // Loop for to progress each string in the list
+                for (int i = 0; i < demoInputs.Length; i++)
+                {
+                    // If the input is "quit" means the demo had ended.
+                    if (demoInputs[i] == "exit")
+                    {
+                        Console.WriteLine("\nDemo Input : " + demoInputs[i]);
+                        Console.WriteLine("\nThe Demo has Ended. Press any key to close a program");
+                        Console.ReadKey();
+                        return;
+                    }
+                    // Process the command in the list
+                    string[] demoCommardParts = demoInputs[i].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    Console.WriteLine("\nDemo Input : " + demoInputs[i]);
+                    Console.WriteLine(commandProcessor.Execute(player, demoCommardParts));
+                    Console.ReadKey(); // Press any key to perform next command
+                }
+                
+            }
+            // NORMAL
             if (commandParts[0] != "quit")
             {
                 Console.WriteLine(commandProcessor.Execute(player, commandParts));

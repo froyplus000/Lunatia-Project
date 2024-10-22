@@ -67,7 +67,7 @@ namespace LunatiaProject
 
 			// City Gate
             Map.Path citygate2forest = _pathFactory.CreatePath("west", "Lunatia Forest", "a path from Lunatia City Front Gate to Lunatia Forest", cityGate, forest);
-            Map.Path citygate2entrance = _pathFactory.CreatePath("east", "Lunatia City Entrance", "a path from Lunatia City to Lunatia Forest", cityGate, cityEntrance, cityEntranceLicense);
+            Map.Path citygate2entrance = _pathFactory.CreatePath("east", "Lunatia City Entrance", "a path from Lunatia City to Lunatia City Entrance", cityGate, cityEntrance, cityEntranceLicense);
 			cityGate.AddPath(citygate2forest);
 			cityGate.AddPath(citygate2entrance);
 
@@ -85,7 +85,7 @@ namespace LunatiaProject
 
 			// Forest
 
-            Map.Path forest2citygate = _pathFactory.CreatePath("east", "Lunatia City Front Gate", "a path from Lunatia Forest to a City Gate", forest, cityGate);
+            Map.Path forest2citygate = _pathFactory.CreatePath("east", "Lunatia City Front Gate", "a path from Lunatia Forest to a Lunatia City Front Gate", forest, cityGate);
             Map.Path forest2upper = _pathFactory.CreatePath("uphill", "Lunatia Forest Upper", "a path from Lunatia Forest to Lunatia Forest Upper", forest, forestUpper, ladder);
             Map.Path forest2lower = _pathFactory.CreatePath("downhill", "Lunatia Forest Lower", "a path from Lunatia Forest to Lunatia Forest Lower", forest, forestLower, strongrope);
 
@@ -96,14 +96,14 @@ namespace LunatiaProject
 			forest.AddAllGatherable(gatherableObjects);
 
 			// Forest Upper
-            Map.Path upper2forest = _pathFactory.CreatePath("downhill", "Lunatia Forest", "a path from Lunatia Forest Upper to Lunatia Forest", forestUpper, forest, strongrope);
+            Map.Path upper2forest = _pathFactory.CreatePath("downhill", "Lunatia Forest", "a path from Lunatia Forest Upper to Lunatia Forest", forestUpper, forest, ladder);
 
 			forestUpper.AddPath(upper2forest);
 
 			forestUpper.Inventory.Put(cityEntranceLicense);
 
 			// Forest Lower
-            Map.Path lower2forest = _pathFactory.CreatePath("uphill", "Lunatia Forest", "a path from Lunatia Forest Lower to Lunatia Forest", forestLower, forest, ladder);
+            Map.Path lower2forest = _pathFactory.CreatePath("uphill", "Lunatia Forest", "a path from Lunatia Forest Lower to Lunatia Forest", forestLower, forest, strongrope);
 
 			forestLower.AddPath(lower2forest);
 			forestLower.Inventory.PutMultipleItems(items);
