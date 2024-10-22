@@ -51,15 +51,38 @@ class Program
             string input = Console.ReadLine().ToLower();
             // split each word in sentence and add in to list of string
             string[] commandParts = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            if (commandParts[0] != "quit")
+
+            if (commandParts[0] == "demo")
             {
-                Console.WriteLine(commandProcessor.Execute(player, commandParts));
-            }
-            else
-            {
-                Console.WriteLine("\nThank you for Playing. Press any key to close a program");
-                Console.ReadKey();
-                break;
+                // List of demo input string
+                string[] demoInputs = new string[] { "look at here", "look at me", "quit" };
+                // Loop for to progress each string in the list
+                for (int i = 0; i < demoInputs.Length; i++)
+                {
+                    // If the input is "quit" means the demo had ended.
+                    if (demoInputs[i] == "quit")
+                    {
+                        Console.WriteLine("\nDemo Input : " + demoInputs[i]);
+                        Console.WriteLine("\nThe Demo has Ended. Press any key to close a program");
+                        Console.ReadKey();
+                        return;
+                    }
+                    // Process the command in the list
+                    string[] demoCommardParts = demoInputs[i].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    Console.WriteLine("\nDemo Input : " + demoInputs[i]);
+                    Console.WriteLine(commandProcessor.Execute(player, demoCommardParts));
+                    Console.ReadKey(); // Press any key to perform next command
+                }
+                if (commandParts[0] != "quit")
+                {
+                    Console.WriteLine(commandProcessor.Execute(player, commandParts));
+                }
+                else
+                {
+                    Console.WriteLine("\nThank you for Playing. Press any key to close a program");
+                    Console.ReadKey();
+                    break;
+                }
             }
         }
     }

@@ -42,7 +42,7 @@ namespace LunatiaProject.Command
         {
             string joinedWord = string.Join("", text.Skip(1));
             // 1. Find recipe from Item Name
-            Recipe recipe = recipeBook.LocateByName(joinedWord);
+            Recipe? recipe = recipeBook.LocateByName(joinedWord);
 
             // 2. Find recipe from Item Id
             if (recipe == null)
@@ -55,17 +55,29 @@ namespace LunatiaProject.Command
                 // Assumed that player may input a recipe id which must be a second word
                 recipe = recipeBook.Locate(joinedWord);
             }
-            string checkIngredient = recipe.CheckIngredient(p);
-            if (checkIngredient != null)
-            {
-                return checkIngredient;
-            }
 
             if (recipe != null)
             {
+                string checkIngredient = recipe.CheckIngredient(p);
+                if (checkIngredient != null)
+                {
+                    return checkIngredient;
+                }
                 p.Craft(recipe);
                 return string.Format("{0} is crafted and added to your inventory", recipe.ItemName);
             }
+            else
+            {
+                return string.Format("Recipe for {0} is not exist.", joinedWord);
+            }
+
+
+
+            //if (recipe != null)
+            //{
+            //    p.Craft(recipe);
+            //    return string.Format("{0} is crafted and added to your inventory", recipe.ItemName);
+            //}
             return errormsg;
         }
 
