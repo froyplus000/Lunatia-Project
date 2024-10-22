@@ -28,7 +28,7 @@ namespace LunatiaProject.Command
 			{
                 case (2):
                     // If 3rd word is here, return full description of player's current location
-                    if (text[1] == "here" && text[0] == "look")
+                    if (text[1] == "here" && text[1] == "around" && text[0] == "look")
                     {
                         return p.Location.FullDescription;
                     }
@@ -145,8 +145,21 @@ namespace LunatiaProject.Command
                         return recipe.GetRecipe();
                     }
                 }
-            }
 
+                Map.Path path = player.Location.LocatePath(itemId);
+                if (path != null)
+                {
+                    if (path.IsLocked == true)
+                    {
+                        return string.Format("{0} Path, {1} that requires {2} to travel through.", path.Name, path.FullDescription, path.Key.Name);
+                    }
+                    else
+                    {
+                        return string.Format("{0} Path, {1}.", path.Name, path.FullDescription);
+                    }
+
+                }
+            }
             return string.Format("I can't find the {0}", itemId);
         }
     }
