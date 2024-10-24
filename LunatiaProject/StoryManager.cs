@@ -52,13 +52,13 @@ public class StoryManager
             {
                 if (line.StartsWith("[") && line.EndsWith("]"))
                 {
-                    // If we encounter a new location section, store the previous location's story
+                    // If we encounter a new trigger section, store the previous trigger's story
                     if (storyTrigger != null && storyText.Length > 0)
                     {
                         _storyData[storyTrigger] = storyText.Trim();
                     }
 
-                    // Set the new location
+                    // Set the new trigger
                     storyTrigger = line.Trim('[', ']');
                     storyText = "";
                 }

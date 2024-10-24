@@ -141,7 +141,7 @@ public class Iteration_8_Test
     public void TestCommandProcessorExecution_LookCommand_InvalidLook() // To test all errors conditions
     {
         // Return error message when input is shorter than 3 words
-        string[] outOfLenght = { "look", "around" };
+        string[] outOfLenght = { "look", "where" };
         string result1 = commandProcessor.Execute(player, outOfLenght);
         Assert.That(result1, Is.EqualTo("I don't know how to look like that"));
 

@@ -22,18 +22,18 @@ namespace LunatiaProject.ItemAndInventory
                 var groupedItems = _items 
                     .GroupBy(item => item.ShortDescription) // Group by item that have same short description
                     // This will create anonymous object for each group
-                    .Select(group => new
+                    .Select(itemGroup => new
                     {
                         // Each group have ShortDescription as a Key
-                        ShortDescription = group.Key,
-                        Count = group.Count() // Count number of items in the group
+                        ShortDescription = itemGroup.Key,
+                        Count = itemGroup.Count() // Count number of items in the group
                     });
 
                 // Build the formatted string for the inventory
                 string itemList = "";
-                foreach (var group in groupedItems)
+                foreach (var itemGroup in groupedItems)
                 {
-                    itemList += string.Format("\t{0} x {1}\n", group.Count, group.ShortDescription);
+                    itemList += string.Format("\t{0} x {1}\n", itemGroup.Count, itemGroup.ShortDescription);
                 }
                
                 return itemList;

@@ -1,9 +1,7 @@
 ﻿using LunatiaProject.Command;
-using LunatiaProject.ItemAndInventory;
 using LunatiaProject.LivingObject;
 using LunatiaProject.Map;
 using LunatiaProject.Factory;
-using LunatiaProject.Core;
 
 
 
@@ -27,7 +25,7 @@ class Program
 
         // SETUP
         LocationFactory locationFactory = new LocationFactory();
-        StoryManager storyManager = new StoryManager("../../../Data/StoryNew.txt");
+        StoryManager storyManager = new StoryManager("../../../Data/Story.txt");
         GameInitializer gameInitializer = new GameInitializer(player, storyManager);
         Location luminara = locationFactory.CreateLocations("luminara", "Luminara City of Light", "A radiant city hidden from ordinary sight. Only those who follow the ancient rituals may witness its splendor, bathed in eternal light and mystery.");
         gameInitializer.StartGame();
@@ -75,8 +73,7 @@ class Program
                     "move west", // Forest again
                     "look at recipebook", // Recipe book 
                     "look at ladder-r", // ladder recipe
-                    // gathering command demo
-                    "gather tree",
+                    "gather tree", // gathering command demo
                     "gather rock",
                     "gather grass",
                     "chop tree",
@@ -87,16 +84,15 @@ class Program
                     "harvest tree",
                     "chop rock",
                     "break grass",
-                    // Player inventory
-                    "look at me",
+                    "look at me", // Player inventory
                     "look at ladder-r",
-                    "craft rope-r",
+                    "craft rope-r", // Crafting
                     "craft rope",
                     "craft Rope",
                     "craft Ladder",
                     "go uphill",
                     "look around",
-                    "look at license in lunatiaForestUpper",
+                    "look at license in lunatiaForestUpper", // Look at item in location
                     "collect license",
                     "go downhill",
                     "look at downhill",
@@ -107,22 +103,22 @@ class Program
                     "look around",
                     "look at note in lunatiaForestLower",
                     "collect note",
-                    "collect lionragweed",
+                    "collect lionragweed", // Collect flowers
                     "collect goldenglow",
                     "collect glons",
-                    "look at lionragweed",
+                    "look at lionragweed", // Look at flowers
                     "look at goldenglow",
                     "look at glons",
                     "look at clearpotion-r",
-                    "craft Clear Potion",
+                    "craft Clear Potion", // Craft potion
                     "go uphill",
                     "go east",
                     "go east",
                     "look around",
-                    "go east",
+                    "go east", // City Centre
                     "look around",
                     "drop license",
-                    "drop clearpotion",
+                    "drop clearpotion", // Game Completed
                     "exit"
                 };
                 // Loop for to progress each string in the list
@@ -138,10 +134,10 @@ class Program
                         Console.ReadKey();
                         return;
                     }
+
                     // Process the command in the list
                     string[] demoCommardParts = demoInputs[i].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                     Console.WriteLine(string.Format("\n[ {0} ]\n", demoInputs[i]));
-                    //Console.WriteLine("\nDemo Input : " + demoInputs[i]);
                     Console.WriteLine(commandProcessor.Execute(player, demoCommardParts));
                     // Completed the game check
                     if (player.Location.Name == "Lunatia City Centre" && player.Location.Inventory.HasItem("license") && player.Location.Inventory.HasItem("clearpotion"))

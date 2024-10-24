@@ -1,7 +1,6 @@
 ﻿using System;
 using LunatiaProject.ItemAndInventory;
 using LunatiaProject.LivingObject;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace LunatiaProject.Command
 {
@@ -32,15 +31,16 @@ namespace LunatiaProject.Command
                     {
                         return errormsg;
                     }
-                    return CraftProcess(recipeBook, text, p, errormsg);
+                    return CraftProcess(recipeBook, text, p);
                 default:
 
-                    return CraftProcess(recipeBook, text, p, errormsg);
+                    return CraftProcess(recipeBook, text, p);
             }
         }
-        private string CraftProcess(RecipeBook recipeBook, string[] text, Player p, string errormsg)
+        private string CraftProcess(RecipeBook recipeBook, string[] text, Player p)
         {
-            string joinedWord = string.Join("", text.Skip(1));
+            string joinedWord = string.Join("", text.Skip(1)); // Skip first word
+
             // 1. Find recipe from Item Name
             Recipe? recipe = recipeBook.LocateByName(joinedWord);
 
@@ -52,7 +52,6 @@ namespace LunatiaProject.Command
             // 3. Find recipe from Recipe Id
             if (recipe == null)
             {
-                // Assumed that player may input a recipe id which must be a second word
                 recipe = recipeBook.Locate(joinedWord);
             }
 
@@ -70,17 +69,7 @@ namespace LunatiaProject.Command
             {
                 return string.Format("Recipe for {0} is not exist.", joinedWord);
             }
-
-
-
-            //if (recipe != null)
-            //{
-            //    p.Craft(recipe);
-            //    return string.Format("{0} is crafted and added to your inventory", recipe.ItemName);
-            //}
-            return errormsg;
         }
-
     }
 }
 

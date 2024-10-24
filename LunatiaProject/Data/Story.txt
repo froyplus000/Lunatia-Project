@@ -1,36 +1,33 @@
 [Setup]
-You awaken in the middle of nowhere.
-Before you are trees, rocks, and grass.
-You soon realize you’re in a strange forest.
-What will you do next?
+You awaken, disoriented, in a place unknown.
+Around you, trees sway, rocks sit, and grass rustles.
+This forest feels unfamiliar... what will you do now?
 [Lunatia City Front Gate]
-A towering gate stands before a vast city.
-Yet, no life stirs within its walls.
+A huge gate looms before a vast city.
+Yet, no signs of life stir behind walls.
 [Lunatia City Entrance]
-You’ve reached Lunatia’s grand city.
-But not a single soul is in sight. Why?
+You've entered Lunatia’s grand city.
+But why is there no one here? The silence is unsettling.
 [Lunatia City Centre]
-You’ve arrived at the city’s heart.
-A massive hole yawns in the ground.
-Is there something you’re meant to do here?
-Why is the city so eerily silent?
-< Sign > “Only those who offer their passage at the city’s heart shall see its true form.”
+You stand at the heart of the city.
+A great hole lies ominously beneath your feet.
+What must you do here? The quiet grows heavier.
+<Sign> "Only those who give their passage at the city's heart will unveil its true form."
 [Lunatia Forest Upper]
-You climb to the upper levels of Lunatia Forest.
-On the ground lies a mysterious object.
-Should you take a closer look?
+You've climbed to the upper reaches of Lunatia Forest.
+A strange object lies ahead. Is it worth investigating?
 [Lunatia Forest Lower]
-You can see a myterious note on the ground.
-Curious what does it say?
+A cryptic note rests on the ground below.
+What could it reveal to you?
 [Obtained License]
-It’s a Lunatia City Entrance License.
-Could this be your key into the city?
+You’ve found a Lunatia City Entrance License.
+Is this your key to entering the city?
 [Obtained Clear Potion]
-It’s a Lunatia City Entrance License.
-Could this be your key into the city?
+A Clear Potion now rests in your hands.
+What mysteries does it hold?
 [Luminara City of Light]
-You have reached the true city.
-Welcome to Luminara, a City of Light.
-Congratgulation to your first adventure.
-You can have a rest now, see you later.
-
+Congrats!!!
+At last, you’ve uncovered the real city.
+Welcome to Luminara, the City of Light.
+Congratulations on completing your first journey.
+You may now rest, traveler, until next time.
