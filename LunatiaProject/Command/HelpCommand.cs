@@ -19,6 +19,7 @@ namespace LunatiaProject.Command
             helpInfo += "\t\tlook at here -> See your Surrounding\n";
             helpInfo += "\t\tlook at east -> See Path detail exist in your location.\n";
             helpInfo += "\t\tlook at recipebook -> See all Recipe in RecipeBook.\n";
+            helpInfo += "\t\tlook at rope-r -> See specific Recipe in RecipeBook.\n";
             // MoveCommand
             helpInfo += "\n\tMove Command: you can move to location with exist path.\n";
             helpInfo += "\t\tmove uphill -> Move you to a new location based on exist path ID.\n";

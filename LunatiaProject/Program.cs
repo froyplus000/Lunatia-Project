@@ -2,6 +2,7 @@
 using LunatiaProject.LivingObject;
 using LunatiaProject.Map;
 using LunatiaProject.Factory;
+using LunatiaProject.ItemAndInventory;
 
 
 
@@ -29,6 +30,18 @@ class Program
         GameInitializer gameInitializer = new GameInitializer(player, storyManager);
         Location luminara = locationFactory.CreateLocations("luminara", "Luminara City of Light", "A radiant city hidden from ordinary sight. Only those who follow the ancient rituals may witness its splendor, bathed in eternal light and mystery.");
         gameInitializer.StartGame();
+
+        // THIS IS WHERE TEST SINGLETON RECIPEBOOK FAILED IN THE INTERVIEW
+        RecipeBook recipebook = RecipeBook.Instance;
+        // Load all recipe from file
+        recipebook = RecipeBook.Instance;
+        string recipeFilePath = "../../../Data/RecipesData.json";
+        RecipeFactory recipeFactory = new RecipeFactory(recipeFilePath);
+        List<Recipe> allRecipes = recipeFactory.CreateRecipe();
+        // Add all to RecipeBook
+        recipebook.AddAllRecipe(allRecipes);
+        // Put recipeBook into player inventory
+        player.Inventory.Put(recipebook);
 
         Command.Command commandProcessor = new CommandProcessor();
 

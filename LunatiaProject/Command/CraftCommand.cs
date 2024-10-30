@@ -18,6 +18,10 @@ namespace LunatiaProject.Command
             }
             RecipeBook? recipeBook = p.Inventory.Fetch("recipebook") as RecipeBook;
 
+            if (recipeBook == null)
+            {
+                return "You don't have Recipe Book in your inventory";
+            }
 
             // Default Error message
             string errormsg = string.Format("What do you want to {0}?", text[0]);
@@ -42,7 +46,7 @@ namespace LunatiaProject.Command
             string joinedWord = string.Join("", text.Skip(1)); // Skip first word
 
             // 1. Find recipe from Item Name
-            Recipe? recipe = recipeBook.LocateByName(joinedWord);
+            Recipe recipe = recipeBook.LocateByName(joinedWord);
 
             // 2. Find recipe from Item Id
             if (recipe == null)
