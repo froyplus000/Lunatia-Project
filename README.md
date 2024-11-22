@@ -8,5 +8,5 @@ The Factory Pattern handled everything about creating object, this including cre
 The Singleton Pattern is used to handle every recipe object in one place, which is a recipe book object. It also used to make sure there could be only one recipe book exist in the game. Recipe book object handle everything related to Recipe object, including getting a list of recipes and locating a recipe. Without this object player wouldn’t be able to do these things.
 ### Facade Pattern
 The Facade Pattern had been used for mainly setting up environment for the game. I call methods from many classes including factory classes to make sure the game had been correctly setup as intended. It also calls methods from Story Manager class to output story to player at the start of the game.
-### Command Pattern (Exists from Swin-Adeventure)
+### Command Pattern
 The Command Pattern had been used to handle different command that player will input to the game. This includes LookCommand, MoveCommand, GatherCommand, CraftCommand, PickUpCommand, DropCommand, HelpCommand and CommandProcessor. These act as a main feature for user interaction with the game my thier inputs.
