@@ -1,5 +1,8 @@
 # Lunatia-Project
 This is a Custom Program created for Object Oriented Programming unit (COS20007) to achieve Distinction Grade, which I extends from an exist Swin-Adventure text based RPG game. Lunatia Project is a Console Based RPG game developed with C# language aiming to demonstrate an understanding of OOP concept, Design patterns and Unit Testing with NUnit.
+
+[![Watch Console Demo](https://img.youtube.com/vi/4FHm9u6Tfo8/maxresdefault.jpg)](https://youtu.be/4FHm9u6Tfo8)
+
 ## Design Patterns used in this project
 There are three design patterns this project extends from the original Swin-Adventure: Factory, Singleton and Facade pattern. These three-design pattern provide solution to feature this project needed, it helps me to design my project to be more maintainable, well structure and easy to use. I also extends an Command Pattern with more command class like GatherCommand, CraftCommand, PickUpCommand, DropCommand, HelpCommand. As well as make in improvement for existing commands like LookCommand, MoveCommand and CommandProcessor to match features implemented in this project.
 ### Factory Pattern
